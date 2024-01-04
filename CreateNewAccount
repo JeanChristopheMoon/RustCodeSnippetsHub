@@ -1,1 +1,31 @@
 
+
+pub fn creat(ctx: Contexts<newaccountcontext>)
+
+
+
+
+
+////Contexts
+
+pub struct newaccountcontext <'info> {
+
+    #[account(init, payer = user, space = 8)]
+    pub newaccount: Accounts<'info, newaccountdeposit>,
+    pub user: signer<'info>,
+    pub system_program: system_program<'info, system>.
+
+}
+
+////Accounts
+
+#[account]
+
+pub struct newaccountdeposit {
+
+    pub name = u64,
+    pub userdeposit = Vec<userdeposit>,
+    pub owner = pubkey
+
+
+}
