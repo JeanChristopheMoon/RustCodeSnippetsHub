@@ -1,10 +1,14 @@
 
 
-pub fn creat(ctx: Contexts<newaccountcontext>)
+///Functions
 
+pub fn creat(ctx: Contexts<newaccountcontext>) -> result<()>{
+let newaccountdeposit: &mut Account<newaccountdeposit> = ctx.accounts.newaccountdeposit;
+newaccountdeposit.name = names,
+newaccountdeposit.pubkey = owner,
+newaccountdeposit.userdeposit = usersdeposit
 
-
-
+}
 
 ////Contexts
 
@@ -13,7 +17,7 @@ pub struct newaccountcontext <'info> {
     #[account(init, payer = user, space = 8)]
     pub newaccount: Accounts<'info, newaccountdeposit>,
     pub user: signer<'info>,
-    pub system_program: system_program<'info, system>.
+    pub system_program: system_program<'info, system>
 
 }
 
@@ -23,9 +27,23 @@ pub struct newaccountcontext <'info> {
 
 pub struct newaccountdeposit {
 
-    pub name = u64,
-    pub userdeposit = Vec<userdeposit>,
-    pub owner = pubkey
+    pub name : u64,
+    pub userdeposit : Vec<userdeposit>,
+    pub owner : pubkey
 
 
 }
+
+
+
+
+
+
+
+
+
+////Forms
+
+//pub VariableName: Accounts<'info, NewVariableName>, decaring in context
+
+//let lottery: &mut Account<Lottery> = &mut ctx.accounts.lottery; declaring and assigning in functions
