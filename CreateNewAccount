@@ -2,11 +2,11 @@
 
 ///Functions
 
-pub fn creat(ctx: Contexts<newaccountcontext>) -> result<()>{
-let newaccountdeposit: &mut Account<newaccountdeposit> = ctx.accounts.newaccountdeposit;
-newaccountdeposit.name = names,
-newaccountdeposit.pubkey = owner,
-newaccountdeposit.userdeposit = usersdeposit
+pub fn creat(ctx: Contexts<newaccountcontext>, owner : pubkey) -> result<()>{
+let creation: &mut newaccountdeposit = &mut ctx.accounts.newaccountdeposit;
+creation.name = 0;
+creation.owner = owner;
+creation.userdeposit = Vec::new();
 
 }
 
@@ -30,20 +30,4 @@ pub struct newaccountdeposit {
     pub name : u64,
     pub userdeposit : Vec<userdeposit>,
     pub owner : pubkey
-
-
 }
-
-
-
-
-
-
-
-
-
-////Forms
-
-//pub VariableName: Accounts<'info, NewVariableName>, decaring in context
-
-//let lottery: &mut Account<Lottery> = &mut ctx.accounts.lottery; declaring and assigning in functions
