@@ -27,7 +27,9 @@ pub struct newaccountcontext <'info> {
 
 pub struct newaccountdeposit {
 
-    pub name : u64,
+    pub total_deposit : u64,
     pub userdeposit : Vec<userdeposit>,
     pub owner : pubkey
 }
+
+
