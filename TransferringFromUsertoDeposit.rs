@@ -15,3 +15,22 @@ pub fn transferringDeposit (ctx: Context<transferringDepositContext, amount : u6
     )?;
 
 }
+
+///user_key is a variable that holds the public key
+/// of the user who is currently attempting to perform
+// an operation, such as a withdrawal.
+
+pub fn withdraw(ctx: Context<Withdraw>, amount: u64) -> Result<()> {
+    let user_key = ctx.accounts.user.key();
+    let mut deposit_found = false;
+
+    for deposit in ctx.accounts.deposit_account.user_deposits.iter_mut() {
+        if deposit.user == user_key {
+            require!(deposit.amount >= amount, ErrorCode::InsufficientFunds);
+            deposit_found = true;
+
+            deposit.amount -= amount;
+            ctx.accounts.deposit_account.total_deposits -= amount;
+            break;
+        }
+    }
