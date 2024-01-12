@@ -12,6 +12,7 @@ pub mod nft_minter {
                 //Invoke another program : CPI
                 /// when using the Anchor framework, CpiContext::new is a method used to create a context for Cross-Program Invocation (CPI). 
                 ctx.accounts.token_program.to_account_info(),
+                ///target program (Smart Contract B) that Smart Contract A wants to invoke
                 MintTo {
                     mint: ctx.accounts.mint_account.to_account_info(),
                     to: ctx.accounts.associated_token_account.to_account_info(),
