@@ -14,7 +14,7 @@ pub mod nft_minter {
                 ctx.accounts.token_program.to_account_info(),
                 ///target program (Smart Contract B) that Smart Contract A wants to invoke
                 MintTo {
-                    ///This is an instruction (MintTo) that Smart Contract A wants to execute within Smart Contract B.
+                    ///This is an instruction (MintTo) that Smart Contract A wants to execute within Smart Contract B : mint,to, authority
                     mint: ctx.accounts.mint_account.to_account_info(),
                     to: ctx.accounts.associated_token_account.to_account_info(),
                     authority: ctx.accounts.payer.to_account_info(),
