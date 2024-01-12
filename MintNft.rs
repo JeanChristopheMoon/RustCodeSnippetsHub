@@ -9,6 +9,7 @@ pub mod nft_minter {
     pub fn mint_nft(ctx: Context<CreateToken>, nft_name: String, nft_symbol: String, nft_uri: String) -> Result<()> {
         mint_to(
             CpiContext::new(
+                //Invoke another program : CPI
                 ctx.accounts.token_program.to_account_info(),
                 MintTo {
                     mint: ctx.accounts.mint_account.to_account_info(),
